@@ -1,0 +1,62 @@
+[2021-03-24T16:54:20.827] [DEBUG] cheese - undefined
+[2021-03-24T16:54:46.816] [DEBUG] cheese - {}
+[2021-03-24T17:20:30.159] [DEBUG] cheese - [Object: null prototype] {
+  province: '上海',
+  city: '上海',
+  district: '宝山区',
+  address: '同济支路199号智慧七立方3号楼2-4层',
+  latitude: '43',
+  longitude: '160',
+  message: '求购一条小鱼',
+  contact: '13666666',
+  type: 'sell',
+  time: '1571217561'
+}
+ [2021-03-24T17:50:43.389] [DEBUG] cheese - [Object: null prototype] {
+  province: '上海',
+  city: '上海',
+  district: '宝山区',
+  address: '同济支路199号智慧七立方3号楼2-4层',
+  latitude: '43',
+  longitude: '160',
+  message: '求购一条小鱼',
+  contact: '13666666',
+  type: 'sell',
+  time: '1571217561'
+}
+[2021-03-24T17:50:43.444] [DEBUG] cheese - [Object: null prototype] {
+  province: '上海',
+  city: '上海',
+  district: '宝山区',
+  address: '同济支路199号智慧七立方3号楼2-4层',
+  latitude: '43',
+  longitude: '160',
+  message: '求购一条小鱼',
+  contact: '13666666',
+  type: 'sell',
+  time: '1571217561'
+}
+[2021-03-24T17:50:50.563] [DEBUG] cheese - [Object: null prototype] {
+  province: '上海',
+  city: '上海',
+  district: '宝山区',
+  address: '同济支路199号智慧七立方3号楼2-4层',
+  latitude: '43',
+  longitude: '160',
+  message: '求购一条小鱼',
+  contact: '13666666',
+  type: 'sell',
+  time: '1571217561'
+}
+[2021-03-24T17:50:50.608] [DEBUG] cheese - [Object: null prototype] {
+  province: '上海',
+  city: '上海',
+  district: '宝山区',
+  address: '同济支路199号智慧七立方3号楼2-4层',
+  latitude: '43',
+  longitude: '160',
+  message: '求购一条小鱼',
+  contact: '13666666',
+  type: 'sell',
+  time: '1571217561'
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proxy</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // fetch('http://localhost:8080/api/web-api/sysbanner/bannerList', {
+    //     method: "post"
+    // }).then(response => {
+    //     return response.json();
+    // }).then(result => {
+    //     console.log(result);
+    // })
+
+    fetch('http://localhost:8080/json/listmore.json?pageNo=1&pageSize=15').then(response => {
+        return response.json();
+    }).then(result => {
+        console.log(result);
+    })
+</script>
+
+</html>

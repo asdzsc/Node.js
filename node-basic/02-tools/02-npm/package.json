@@ -1,0 +1,30 @@
+{
+    "name": "02-tools",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "cross-env  NODE_ENV=development gulp -f ./gulpfile.js",
+        "prod": "cross-env  NODE_ENV=production gulp -f ./gulpfile.js",
+        "test": "node ./03-scripts/test.js",
+        "greeting": "echo hello",
+        "runjs": "node ./03-scripts/script1.js && node ./03-scripts/script2.js",
+        "start": "node ./03-scripts/script.js",
+        "build": "echo $npm_package_config_env"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "gulp": "^4.0.2",
+        "jquery": "^2.2.4"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "vant": "^2.12.5"
+    },
+    "config": {
+        "env": "production"
+    }
+}

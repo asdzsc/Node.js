@@ -1,0 +1,50 @@
+一、数据库的操作
+db 查询当前数据库
+show dbs  查询所有的数据库
+use names  创建、切换数据库
+db.dropDatabase  删除数据库
+
+二、集合的操作
+show collections 显示当前数据中的集合
+db.COLLECTION_NAME.drop() 删除当前数据库中指定的集合
+db.createCollection("COLLECTION_NAME") 创建一个集合
+db.getCollectionNames() 得到当前db的所有集合
+
+三、文档操作
+1.插入数据
+db.数据库名字.insert([{name:"tom",age:18}])
+db.数据库名字.insert([{name:"tom",age:18},{name:"leo",age:18}])
+db.数据库名字.save([{name:"tom",age:18},{name:"leo",age:18}])
+
+2.修改数据
+db.数据库名字.update({name:"tom"},{$set:{age:20}}) 第一个值代表查询条件 第二个值代表修改值 $set把原有值替换
+db.数据库名字.update({name:"tom"},{$inc:{age:20}}) 第一个值代表查询条件 第二个值代表修改值 $inc在原有值的基础上增加
+db.数据库名字.update({name:"lucy"},{$inc:{age:20}}，true)   第三个值代表是否通过查询条件找到 true为找不到的话添加数据 false为忽略
+db.数据库名字.update({name:"lucy"},{$inc:{age:20}}，true,false)   第四个值代表是否通过查询条件找到 true为所有的值进行修改 false为查询到的第一个修改
+
+3.删除数据
+db.数据库名字.remove({name:"lucy"}) 传入查询条件 删除该值
+
+4.查询数据
+db.数据库名字.find() 查询所有
+db.数据库名字.distinct(age:18) 查询到去重后的数据
+db.数据库名字.find({age:18}) 查询到age是18的数据
+db.数据库名字.find({age:{$gt:18}}) 查询到age大于18的数据
+db.数据库名字.find({age:{$gte:18}}) 查询到age大于等于18的数据
+db.数据库名字.find({age:{$lt:18}}) 查询到age小于18的数据
+db.数据库名字.find({age:{$lte:18}}) 查询到age小于等于18的数据
+db.数据库名字.find({name:/o/}) 查询到name中带o的数据
+db.数据库名字.find({name:/^o/}) 查询到name中开头带o的数据
+db.数据库名字.find({name:/o$/}) 查询到name中结尾带o的数据
+db.数据库名字.find({},{_id:0})  过滤掉数据中的id属性 0为过滤 1为不过滤
+db.数据库名字.find({name:/o/},{_id:0}) 查询到name中带o的数据而且过滤掉数据中的id属性
+db.数据库名字.find().sort({age:1})  查询到数据中age 进行升序操作 1为升序
+db.数据库名字.find().sort({age:-1})  查询到数据中age 进行降序操作 -1为降序
+db.数据库名字.find().limit(2) 查询数据中的前两条数据
+db.数据库名字.find().skip(2) 查询数据中的两条以后的所有数据
+db.数据库名字.find().skip(1).limit(3) 查询第1-3条之间的数据 包含1和3
+db.数据库名字.find().limit(3).skip(1) 查询第1-3条之间的数据 包含1和3
+db.数据库名字.find({$or:[{age:19},{"name":"tom"}]}) 查询到数据中包含age为19 或者name为tom的所有数据
+db.数据库名字.find({$or:[{age:19},{"name":"tom"}]}) 查询到数据中包含age为19 或者name为tom的所有数据
+db.数据库名字.findOne() 查询到所有数据中的第一条
+db.数据库名字.find().count() 查询到所有数据的个数

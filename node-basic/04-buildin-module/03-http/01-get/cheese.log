@@ -1,0 +1,6 @@
+[2021-03-24T16:47:31.475] [DEBUG] cheese - 
+[2021-03-24T16:47:31.749] [DEBUG] cheese - 
+[2021-03-24T16:47:31.763] [DEBUG] cheese - 
+[2021-03-24T16:48:07.830] [DEBUG] cheese - {"timestamp":"2021-03-24 16:48:08","status":405,"error":"Method Not Allowed","message":"Request method 'GET' not supported","path":"/web-api/sysbanner/bannerList"}
+[2021-03-24T16:48:08.003] [DEBUG] cheese - {"timestamp":"2021-03-24 16:48:08","status":405,"error":"Method Not Allowed","message":"Request method 'GET' not supported","path":"/web-api/sysbanner/bannerList"}
+[2021-03-24T16:48:08.037] [DEBUG] cheese - {"timestamp":"2021-03-24 16:48:08","status":405,"error":"Method Not Allowed","message":"Request method 'GET' not supported","path":"/web-api/sysbanner/bannerList"}
