@@ -1,4 +1,3 @@
-import indexTpl from "./views/index.art";
+import router from "./routers/index";
 
-const html = indexTpl({});
-$("#root").html(html);
+router.go("/");

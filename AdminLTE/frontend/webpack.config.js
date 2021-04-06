@@ -1,8 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
     // 配置环境
@@ -27,7 +26,9 @@ module.exports = {
     module: {
         rules: [{
             test: /\.art$/,
-            loader: "art-template-loader",
+            use: {
+                loader: "html-loader",
+            },
         }, ],
     },
     // 配置文件
@@ -36,7 +37,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "./public/index.html"),
             filename: "index.html",
-            inject: true,
+            inject: true, //脚本写在那个标签里,默认是true(在body结束后)
         }),
         // new CopyPlugin({
         //     patterns: [
