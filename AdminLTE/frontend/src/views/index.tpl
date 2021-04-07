@@ -4,9 +4,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>拉勾网</b></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-lg"><b>拉勾网</b>职位管理系统</span>
         </a>
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -202,9 +202,9 @@
             <ul class="sidebar-menu">
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-                <li class="treeview">
+                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>用户列表</span></a></li>
+                <li><a href="#"><i class="fa fa-link"></i> <span>职位管理</span></a></li>
+                <!-- <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>多级菜单</span>
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
@@ -214,7 +214,7 @@
                         <li><a href="#">Link in level 2</a></li>
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
             <!-- /.sidebar-menu -->
         </section>
@@ -226,19 +226,17 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Page Header
-                <small>Optional description</small>
+                用户管理
+                <small>用户列表</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">用户</li>
             </ol>
         </section>
 
         <!-- Main content -->
-        <section class="content">
-
-            <!-- Your Page Content Here -->
+        <section class="content" id="content">
 
         </section>
         <!-- /.content -->

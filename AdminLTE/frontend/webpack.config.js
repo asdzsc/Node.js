@@ -25,11 +25,16 @@ module.exports = {
     // },
     module: {
         rules: [{
-            test: /\.art$/,
-            use: {
-                loader: "html-loader",
+                test: /\.tpl$/,
+                use: {
+                    loader: "html-loader",
+                },
             },
-        }, ],
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+        ],
     },
     // 配置文件
     plugins: [

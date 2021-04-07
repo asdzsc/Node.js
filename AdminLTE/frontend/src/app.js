@@ -1,3 +1,6 @@
-import router from "./routers/index";
+// 载入css
+import "./assets/common.css";
+// 载入路由
+import router from "./routes/index";
 
-router.go("/");
+router.go("/index");

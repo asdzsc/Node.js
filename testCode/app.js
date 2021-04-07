@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 const path = require("path");
-const router = require("./router/index");
+const router = require("./routes/index");
 
 // view engine setup
 app.engine("art", require("express-art-template"));

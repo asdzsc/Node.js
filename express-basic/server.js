@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 // req.body的第三方中间件
 var bodyParser = require("body-parser");
-const router = require("./router/index");
+const router = require("./routes/index");
 
 // parse application/x-www-form-urlencoded 处理表单格式
 app.use(bodyParser.urlencoded({ extended: false }));
