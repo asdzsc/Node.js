@@ -11,12 +11,11 @@
                 <th>用户名</th>
                 <th style="width: 40px">操作</th>
             </tr>
-            <tr>
-                <td>1.</td>
-                <td>admin</td>
-                <td> <button type="button" class="btn btn-danger">删除</button></td>
-            </tr>
+            <tbody id="users-list"></tbody>
         </table>
+        <div class="box-footer clearfix" id="users-page">
+
+        </div>
     </div>
     <!-- /.modal-content -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -39,10 +38,14 @@
                                     <label for="exampleInputPassword1">密码</label>
                                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
                                 </div>
+
                             </div>
                             <!-- /.box-body -->
+
                         </form>
+
                     </div>
+
                     <!-- /.box -->
                 </div>
                 <div class="modal-footer">

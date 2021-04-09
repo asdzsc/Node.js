@@ -59,3 +59,7 @@
 - Node.js
 - Express
 - MongoDB (mongoose)
+
+### 开发架构
+
+- 前后端分离的开发架构

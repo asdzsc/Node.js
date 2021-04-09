@@ -17,12 +17,6 @@ module.exports = {
         path: path.resolve(__dirname, "./dist"),
         filename: "[name]-[hash:6].js",
     },
-    // module: {
-    //     rules: [{
-    //         test: /\.art$/,
-    //         loader: "art-template-loader",
-    //     }, ],
-    // },
     module: {
         rules: [{
                 test: /\.tpl$/,
@@ -69,5 +63,11 @@ module.exports = {
         contentBase: path.resolve(__dirname, "./dist"),
         compress: true,
         port: 9000,
+        // 前端跨域反向代理
+        proxy: {
+            "/api": {
+                target: "http://localhost:3000",
+            },
+        },
     },
 };

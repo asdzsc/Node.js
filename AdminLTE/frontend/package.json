@@ -12,6 +12,7 @@
     "license": "ISC",
     "devDependencies": {
         "art-template": "^4.13.2",
+        "art-template-loader": "^1.4.3",
         "clean-webpack-plugin": "^2.0.1",
         "copy-webpack-plugin": "^8.1.0",
         "css-loader": "^5.2.0",
@@ -24,6 +25,7 @@
     },
     "description": "",
     "dependencies": {
+        "express-art-template": "^1.0.1",
         "sme-router": "^0.12.8"
     }
 }
