@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/lagou-admin", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: true,
 });
 
 // 成功提醒和失败警告

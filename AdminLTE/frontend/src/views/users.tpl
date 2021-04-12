@@ -1,4 +1,3 @@
-<!-- Your Page Content Here -->
 <div class="box">
     <div class="box-header">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">添加</button>
@@ -32,7 +31,7 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">用户名</label>
-                                    <input type="email" name="username" class="form-control" id="exampleInputEmail1" placeholder="请输入用户名">
+                                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="请输入用户名">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">密码</label>
@@ -41,11 +40,8 @@
 
                             </div>
                             <!-- /.box-body -->
-
                         </form>
-
                     </div>
-
                     <!-- /.box -->
                 </div>
                 <div class="modal-footer">

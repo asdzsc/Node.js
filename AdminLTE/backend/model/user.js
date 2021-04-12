@@ -16,9 +16,14 @@ const signup = ({ username, password }) => {
     // 往数据库存储数据是异步操作 返回promise
     return users.save();
 };
+const delUser = (id)=>{
+	// return Users.findByIdAndRemove(id)
+	return Users.deleteOne({_id:id})
+}
 
 module.exports = {
     signup,
     findUser,
     findList,
+	delUser
 };
