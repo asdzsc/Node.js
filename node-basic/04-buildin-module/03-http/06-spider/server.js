@@ -20,7 +20,6 @@ function filterData(data) {
 const server = http.createServer((request, response) => {
     let data = "";
     https.get("https://www.mi.com", (res) => {
-        // console.log(res);
         res.on("data", (chunk) => {
             data += chunk;
         });

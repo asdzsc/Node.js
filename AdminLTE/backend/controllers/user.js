@@ -11,7 +11,6 @@ const {
 // 注册用户
 const signUp = async (req, res, next) => {
 	res.set("content-type", "application/json;charset=utf-8");
-
 	const {
 		username,
 		password
@@ -40,58 +39,6 @@ const signUp = async (req, res, next) => {
 		});
 	}
 };
-
-// 退出登录
-const signOut = async (req, res, next) => {
-	req.session = null
-	res.render("success", {
-		data: JSON.stringify({
-			message: "退出登录成功！"
-		}),
-	});
-}
-
-// 用户登录
-const signIn = async (req, res, next) => {
-
-	const {
-		username,
-		password
-	} = req.body
-	const result = await usersModel.findUser(username)
-	// 验证用户是否是合法用户
-	if (result) {
-		let {
-			password: hash
-		} = result
-		// 验证密码是否正确
-		let compareResult = await compare(password, hash)
-		if (compareResult) {
-			// 搭建 cookie
-			// const sessionId = randomstring.generate();
-			// res.set('Set-Cookie', `sessionId=${sessionId}; Path=/; HttpOnly`)
-			req.session.username = username
-			res.render("success", {
-				data: JSON.stringify({
-					username
-				}),
-			});
-		} else {
-			res.render("fail", {
-				data: JSON.stringify({
-					message: "用户名或密码错误"
-				}),
-			});
-		}
-
-	} else {
-		res.render("fail", {
-			data: JSON.stringify({
-				message: "用户名或密码错误"
-			}),
-		});
-	}
-}
 
 // 用户列表
 const userList = async (req, res, next) => {
@@ -124,6 +71,59 @@ const delUser = async (req, res, next) => {
 	}
 
 
+}
+
+// 用户登录
+const signIn = async (req, res, next) => {
+
+	const {
+		username,
+		password
+	} = req.body
+	const result = await usersModel.findUser(username)
+	// 验证用户是否是合法用户
+	if (result) {
+		let {
+			password: hash
+		} = result
+		// 验证密码是否正确
+		let compareResult = await compare(password, hash)
+		if (compareResult) {
+			// 搭建 cookie
+			// const sessionId = randomstring.generate();
+			// res.set('Set-Cookie', `sessionId=${sessionId}; Path=/; HttpOnly`)
+			// 根据username生成cookie
+			req.session.username = username
+			res.render("success", {
+				data: JSON.stringify({
+					username
+				}),
+			});
+		} else {
+			res.render("fail", {
+				data: JSON.stringify({
+					message: "用户名或密码错误"
+				}),
+			});
+		}
+
+	} else {
+		res.render("fail", {
+			data: JSON.stringify({
+				message: "用户名或密码错误"
+			}),
+		});
+	}
+}
+
+// 退出登录
+const signOut = async (req, res, next) => {
+	req.session = null
+	res.render("success", {
+		data: JSON.stringify({
+			message: "退出登录成功！"
+		}),
+	});
 }
 
 // 判断是否登录

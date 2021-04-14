@@ -12,7 +12,6 @@ exports.hash = (myPlaintextPassword) => {
 		});
 	});
 };
-
 // 验证密码是否正确
 exports.compare = (myPlaintextPassword, hash) => {
 	return new Promise((resolve, reject) => {
