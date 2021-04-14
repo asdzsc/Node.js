@@ -1,5 +1,3 @@
-// 首页模板
-import indexTpl from "../../views/index.tpl";
 // 用户列表模板
 import usersTpl from "../../views/users.tpl";
 import usersListTpl from "../../views/users-list.tpl";
@@ -10,7 +8,7 @@ import handlePage from "../../components/pagination";
 
 import page from "../../databus/page";
 
-import { addUsers } from "../users/add-users";
+import { addUsers } from "./add-users";
 import { usersList } from "../../models/users-list";
 import { auth } from "../../models/auth";
 import { usersRemove } from "../../models/users-remove";
@@ -129,14 +127,12 @@ const subscribe = () => {
 
 // 首页
 const indexPage = (router) => {
-    const loadIndex = (res) => {
-        // 渲染首页
-        res.render(indexTpl);
-        //window resize 让页面撑满整个屏幕
-        $(window, ".wrapper").resize();
-
+    const loadIndex = (res, next) => {
         // 渲染用户列表
+        // next();
         $("#content").html(usersTpl);
+
+        // res.render(usersTpl);
 
         $("#add-user-btn").on("click", addUsers);
         //添加数据后渲染
@@ -149,7 +145,7 @@ const indexPage = (router) => {
     return async(req, res, next) => {
         let result = await auth();
         if (result.res == 200) {
-            loadIndex(res);
+            loadIndex(res, next);
         } else {
             router.go("/signin");
         }

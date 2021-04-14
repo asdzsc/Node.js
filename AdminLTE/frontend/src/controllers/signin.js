@@ -14,7 +14,7 @@ const handleSubmit = (router) => {
         const token = jqXHR.getResponseHeader("X-Access-Token");
         localStorage.setItem("lg-token", token);
         if (res.res == 200) {
-            router.go("/index");
+            router.go("/index/users");
         } else {
             alert("用户名或密码错误");
         }

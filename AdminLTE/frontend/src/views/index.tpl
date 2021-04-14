@@ -199,11 +199,11 @@
             <!-- /.search form -->
 
             <!-- Sidebar Menu -->
-            <ul class="sidebar-menu">
+            <ul class="sidebar-menu" id="sidebar-menu">
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>用户列表</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>职位管理</span></a></li>
+                <li class="active" to="/index/users"><a href="javascript:;"><i class="fa fa-link"></i> <span>用户列表</span></a></li>
+                <li to="/index/positions"><a href="javascript:;"><i class="fa fa-link"></i> <span>职位管理</span></a></li>
                 <!-- <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>多级菜单</span>
                   <span class="pull-right-container">

@@ -26,7 +26,7 @@ const signUp = async (req, res, next) => {
 		res.render("fail", {
 			data: JSON.stringify({
 				message: "用户已存在！",
-			}),
+			}), 
 		});
 	} else {
 		// 异步操作
