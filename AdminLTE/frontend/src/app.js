@@ -14,7 +14,7 @@ router.go("/");
 //         if (res.res == 200) {
 //             router.go("/index");
 //         } else {
-//             router.go("/singin");
+//             router.go("/signin");
 //         }
 //     },
 // });

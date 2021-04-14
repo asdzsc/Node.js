@@ -4,8 +4,9 @@ const express = require("express");
 // 路由中间件
 const router = express.Router();
 
-const { list } = require("../controllers/index");
+const { list, token } = require("../controllers/index");
 router.get("/api/list", list);
+router.get("/api/token", token);
 
 // 获取数据
 // router.get("/index", (req, res, next) => {

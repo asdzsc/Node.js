@@ -13,7 +13,9 @@ const handleSubmit = (router) => {
             type: "post",
             dataType: "json",
             data,
-            success(res) {
+            success(res, textStatus, jqXHR) {
+                const token = jqXHR.getResponseHeader("X-Access-Token");
+                localStorage.setItem("lg-token", token);
                 if (res.res == 200) {
                     router.go("/index");
                 } else {

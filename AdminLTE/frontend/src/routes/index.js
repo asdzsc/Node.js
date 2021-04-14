@@ -12,11 +12,14 @@ router.use((req) => {
     $.ajax({
         url: "/api/users/isAuth",
         dataType: "json",
+        headers: {
+            "X-Access-Token": localStorage.getItem("lg-token") || null,
+        },
         success(res) {
             if (res.res == 200) {
                 router.go("/index");
             } else {
-                router.go("/singin");
+                router.go("/signin");
             }
         },
     });
@@ -24,6 +27,6 @@ router.use((req) => {
 
 router.route("/", indexPage(router));
 router.route("/index", indexPage(router));
-router.route("/singin", signinPage(router));
+router.route("/signin", signinPage(router));
 
 export default router;

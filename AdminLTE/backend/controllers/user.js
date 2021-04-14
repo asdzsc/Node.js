@@ -1,7 +1,9 @@
 const usersModel = require("../model/user");
 const {
 	hash,
-	compare
+	compare,
+	sign,
+	verify
 } = require("../utils/tool");
 
 // 搭建随机cookie传给前端
@@ -92,8 +94,17 @@ const signIn = async (req, res, next) => {
 			// 搭建 cookie
 			// const sessionId = randomstring.generate();
 			// res.set('Set-Cookie', `sessionId=${sessionId}; Path=/; HttpOnly`)
+			
 			// 根据username生成cookie
-			req.session.username = username
+			// req.session.username = username
+
+			// 根据username生成token
+			const token = sign(username)
+			// console.log(token)
+			
+			// 把token设置到请求头中
+			res.set("X-Access-Token", token)
+			
 			res.render("success", {
 				data: JSON.stringify({
 					username
@@ -128,13 +139,29 @@ const signOut = async (req, res, next) => {
 
 // 判断是否登录
 const isAuth = async (req, res, next) => {
-	if (req.session.username) {
+	// if (req.session.username) {
+	// 	res.render("success", {
+	// 		data: JSON.stringify({
+	// 			username: req.session.username
+	// 		}),
+	// 	});
+	// } else {
+	// 	res.render("fail", {
+	// 		data: JSON.stringify({
+	// 			message: "请登录！"
+	// 		}),
+	// 	});
+	// }
+	const token = req.get("X-Access-Token")
+	try {
+		let decoded = verify(token)
+		console.log(decoded)
 		res.render("success", {
 			data: JSON.stringify({
-				username: req.session.username
+				username: decoded.username
 			}),
 		});
-	} else {
+	} catch (e) {
 		res.render("fail", {
 			data: JSON.stringify({
 				message: "请登录！"

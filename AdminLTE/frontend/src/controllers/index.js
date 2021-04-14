@@ -36,6 +36,9 @@ const saveUsers = () => {
     $.ajax({
         url: "/api/users/",
         type: "post",
+        headers: {
+            "X-Access-Token": localStorage.getItem("lg-token") || null,
+        },
         data,
         success: function() {
             page.setCurrentPage(1);
@@ -50,6 +53,9 @@ const saveUsers = () => {
 const loadData = () => {
     $.ajax({
         url: "/api/users/",
+        headers: {
+            "X-Access-Token": localStorage.getItem("lg-token") || null,
+        },
         // async: false, //把异步改成同步
         success: function(res) {
             dataList = res.data;
@@ -74,6 +80,9 @@ const methods = () => {
             data: {
                 id: $(this).attr("data-id"),
             },
+            headers: {
+                "X-Access-Token": localStorage.getItem("lg-token") || null,
+            },
             success: function() {
                 //添加数据后渲染
                 loadData();
@@ -94,15 +103,20 @@ const methods = () => {
     //用户退出
     $("#users-logout").on("click", function(e) {
         e.preventDefault();
-        $.ajax({
-            url: "/api/users/signout",
-            dataType: "json",
-            success(res) {
-                if (res.res == 200) {
-                    router.go("#/singin");
-                }
-            },
-        });
+        // $.ajax({
+        //     url: "/api/users/signout",
+        //     dataType: "json",
+        //     headers: {
+        //         "X-Access-Token": localStorage.getItem("lg-token") || null,
+        //     },
+        //     success(res) {
+        //         if (res.res == 200) {
+        //             router.go("#/signin");
+        //         }
+        //     },
+        // });
+        localStorage.setItem("lg-token", "");
+        location.reload();
     });
     // 保存用户列表 提交表单
     $("#users-save").on("click", saveUsers);
@@ -142,11 +156,14 @@ const indexPage = (router) => {
         $.ajax({
             url: "/api/users/isAuth",
             dataType: "json",
+            headers: {
+                "X-Access-Token": localStorage.getItem("lg-token") || null,
+            },
             success(result) {
                 if (result.res == 200) {
                     loadIndex(res);
                 } else {
-                    router.go("/singin");
+                    router.go("/signin");
                 }
             },
         });
