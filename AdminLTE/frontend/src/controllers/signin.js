@@ -1,28 +1,23 @@
 // 登录模板
 import signinTpl from "../views/signin.tpl";
 
+import { signIn } from "../models/signin";
+
 // 登录
 const handleSubmit = (router) => {
-    return (e) => {
+    return async(e) => {
         e.preventDefault();
         // 获取表单内容
         const data = $("#users-submit").serialize();
         // 发送ajax请求
-        $.ajax({
-            url: "/api/users/signin",
-            type: "post",
-            dataType: "json",
-            data,
-            success(res, textStatus, jqXHR) {
-                const token = jqXHR.getResponseHeader("X-Access-Token");
-                localStorage.setItem("lg-token", token);
-                if (res.res == 200) {
-                    router.go("/index");
-                } else {
-                    alert("用户名或密码错误");
-                }
-            },
-        });
+        let { jqXHR, res } = await signIn(data);
+        const token = jqXHR.getResponseHeader("X-Access-Token");
+        localStorage.setItem("lg-token", token);
+        if (res.res == 200) {
+            router.go("/index");
+        } else {
+            alert("用户名或密码错误");
+        }
     };
 };
 

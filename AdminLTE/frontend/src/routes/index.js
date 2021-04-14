@@ -3,26 +3,19 @@ import SMERouter from "sme-router";
 // 挂载路由
 const router = new SMERouter("root");
 
-import indexPage from "../controllers/index";
+import indexPage from "../controllers/users/index";
 import signinPage from "../controllers/signin";
+import { auth } from "../models/auth";
 
 // 路由守卫
-router.use((req) => {
+router.use(async(req) => {
     // 第一次打开的页面
-    $.ajax({
-        url: "/api/users/isAuth",
-        dataType: "json",
-        headers: {
-            "X-Access-Token": localStorage.getItem("lg-token") || null,
-        },
-        success(res) {
-            if (res.res == 200) {
-                router.go("/index");
-            } else {
-                router.go("/signin");
-            }
-        },
-    });
+    let result = await auth();
+    if (result.res == 200) {
+        router.go("/index");
+    } else {
+        router.go("/signin");
+    }
 });
 
 router.route("/", indexPage(router));

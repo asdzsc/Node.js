@@ -152,8 +152,11 @@ const isAuth = async (req, res, next) => {
 	// 		}),
 	// 	});
 	// }
+	
+	// 获取到token
 	const token = req.get("X-Access-Token")
 	try {
+		// token 解密
 		let decoded = verify(token)
 		console.log(decoded)
 		res.render("success", {
