@@ -19,22 +19,24 @@ const setPageActive = (index) => {
 // 绑定事件
 const bindEvent = (data) => {
     // 切换页面
-    $("#users-page").on(
-        "click",
-        "#users-page-list li:not(:first-child,:last-child)",
-        function() {
-            const index = $(this).index();
-            // getUserList(index);
-            // currentPage = index;
+    $("#users-page")
+        .off("click")
+        .on(
+            "click",
+            "#users-page-list li:not(:first-child,:last-child)",
+            function() {
+                const index = $(this).index();
+                // getUserList(index);
+                // currentPage = index;
 
-            // 更新bus总线上的共享数据
-            page.setCurrentPage(index);
+                // 更新bus总线上的共享数据
+                page.setCurrentPage(index);
 
-            // 在按钮点击的时候，通过观察者模式，通知list要更新
-            $("body").triggerHandler("changeCurrentPage", index);
-            setPageActive(index);
-        }
-    );
+                // 在按钮点击的时候，通过观察者模式，通知list要更新
+                $("body").triggerHandler("changeCurrentPage", index);
+                setPageActive(index);
+            }
+        );
 
     // $("#users-page").on("click");
     // 上一页

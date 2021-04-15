@@ -2,7 +2,7 @@
 db 查询当前数据库
 show dbs  查询所有的数据库
 use names  创建、切换数据库
-db.dropDatabase  删除数据库
+db.dropDatabase()  删除数据库
 
 二、集合的操作
 show collections 显示当前数据中的集合

@@ -202,8 +202,8 @@
             <ul class="sidebar-menu" id="sidebar-menu">
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active" to="/index/users"><a href="javascript:;"><i class="fa fa-link"></i> <span>用户列表</span></a></li>
-                <li to="/index/positions"><a href="javascript:;"><i class="fa fa-link"></i> <span>职位管理</span></a></li>
+                <li class="active"><a href="#/index/users"><i class="fa fa-link"></i> <span>用户列表</span></a></li>
+                <li><a href="#/index/positions"><i class="fa fa-link"></i> <span>职位管理</span></a></li>
                 <!-- <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>多级菜单</span>
                   <span class="pull-right-container">
@@ -223,16 +223,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                用户管理
-                <small>用户列表</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li class="active">用户</li>
-            </ol>
-        </section>
+
 
         <!-- Main content -->
         <section class="content" id="content">

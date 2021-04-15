@@ -4,7 +4,9 @@ import "./assets/common.css";
 // 载入路由
 import router from "./routes/index";
 
-router.go("/");
+const hash = location.hash.slice(1);
+
+router.go(hash);
 
 // // 第一次打开的页面
 // $.ajax({

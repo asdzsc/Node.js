@@ -1,6 +1,8 @@
 // 首页模板
 import indexTpl from "../views/index.tpl";
 import { auth } from "../models/auth";
+
+import pageHeader from "../components/pageheader";
 // 首页
 const indexPage = (router) => {
     return async(req, res, next) => {
@@ -13,22 +15,20 @@ const indexPage = (router) => {
             // next(indexTpl);
             $(window, ".wrapper").resize();
 
-            const $lis = $("#sidebar-menu li:not(first-child)");
+            const $as = $("#sidebar-menu li:not(first-child) a");
+            // $as.on("click", function() {
+            //     const url = $(this).attr("to");
+            //     router.go(url);
+            // });
 
-            $lis.on("click", function() {
-                const url = $(this).attr("to");
-                router.go(url);
-            });
-
-            let hash = location.hash.slice(1);
-            console.log(hash);
-            // router.go(url);
-            console.log($lis.find(`[to="${hash}"]`));
-            $lis
-                .find(`[to="${hash}"]`)
+            let hash = location.hash;
+            $as
+                .filter(`[href="${hash}"]`)
+                .parent()
                 .addClass("active")
                 .siblings()
                 .removeClass("active");
+            pageHeader();
         } else {
             router.go("/signin");
         }
