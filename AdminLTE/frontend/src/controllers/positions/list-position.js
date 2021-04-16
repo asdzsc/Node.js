@@ -8,7 +8,7 @@ import positionListTpl from "../../views/position-list.tpl";
 // 分页组件
 import handlePage from "../../components/pagination";
 
-import { positionsAdd } from "../../models/position-add";
+import { positonsList } from "../../models/positions-list";
 
 import { auth } from "../../models/auth";
 
@@ -19,15 +19,16 @@ export default (router) => {
         if (result.res == 200) {
             // 渲染职位页面
             $("#content").html(positionTpl);
-
+            let list = await positonsList();
+            console.log(list);
             // 渲染职位list
             let htmlList = template.render(positionListTpl, {
-                data: ["a", "b", "c"],
+                data: list,
             });
             $("#positions-list").html(htmlList);
 
             // 分页
-            handlePage(["a", "b", "c"]);
+            handlePage(list, 1);
 
             // 职位
             //显示添加模态框

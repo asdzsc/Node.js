@@ -8,6 +8,7 @@ var cookieSession = require('cookie-session')
 // 后端跨域正向代理
 // var cors = require("cors");
 var usersRouter = require("./routes/users");
+var positionsRouter = require("./routes/positions");
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // }))
 
 app.use("/api/users", usersRouter);
+app.use("/api/positions", positionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

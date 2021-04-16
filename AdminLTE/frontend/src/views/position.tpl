@@ -12,7 +12,7 @@
                 <th>职位名称</th>
                 <th style="width: 120px">工作城市</th>
                 <th style="width: 120px">职位薪资</th>
-                <th style="width: 120px">发布时间</th>
+                <th style="width: 180px">发布时间</th>
                 <th style="width: 180px">操作</th>
             </tr>
             <tbody id="positions-list"></tbody>

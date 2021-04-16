@@ -25,4 +25,18 @@ var usersSchema = new Schema({
 // 它们的实例就代表着可以从数据库保存和读取的 documents。 从数据库创建和读取 document 的所有操作都是通过 model 进行的。
 var Users = mongoose.model("users", usersSchema);
 
+
+// 构建positionsSchema
+var positionsSchema = new Schema({
+    componyName: String,
+    positionName: String,
+    city: String,
+    createTime: String,
+    salary: String,
+});
+
+var Positions = mongoose.model("positions", positionsSchema);
+
+
 exports.Users = Users;
+exports.Positions = Positions;
