@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 
 // 静态资源服务中间件(内置中间件)
 app.use("/index", express.static("public"));
+
 // app.use("/fool", express.static("fool"));
 
 // view engine setup
