@@ -1,7 +1,7 @@
 <ul class="pagination pagination-sm no-margin pull-right" id="users-page-list">
-    <li><a href="#">&laquo;</a></li>
+    <li><a href="javascript:;">&laquo;</a></li>
     {{each pageArr}}
-    <li><a href="#">{{$index+1}}</a></li>
+    <li><a href="javascript:;">{{$index+1}}</a></li>
     {{/each}}
-    <li><a href="#">&raquo;</a></li>
+    <li><a href="javascript:;">&raquo;</a></li>
 </ul>

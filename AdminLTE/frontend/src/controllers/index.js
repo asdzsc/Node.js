@@ -1,6 +1,7 @@
 // 首页模板
 import indexTpl from "../views/index.tpl";
 import { auth } from "../models/auth";
+import page from "../databus/page";
 
 import pageHeader from "../components/pageheader";
 // 首页
@@ -28,7 +29,13 @@ const indexPage = (router) => {
                 .addClass("active")
                 .siblings()
                 .removeClass("active");
+            //加载页面导航
             pageHeader();
+
+            console.log(page.currentRoute);
+
+            // 当前url保存
+            page.setCurrentRoute(hash);
         } else {
             router.go("/signin");
         }
