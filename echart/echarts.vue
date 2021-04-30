@@ -60,6 +60,7 @@ export default {
         // 鼠标移上去显示数值工具
         tooltip: {
           trigger: "axis",
+          formatter: "{b}<br/>{a} {c}",
           textStyle: {
             fontSize: 15,
             color: "#fff",
